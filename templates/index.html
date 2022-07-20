@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+        <div class="login">
+            <h1>Predict Selling Price of Cars</h1>
+            <h2> Enter the following values to predict Car Selling Price</h2>
+
+        <form action="{{ url_for('predict')}}" method="post">
+
+            <input id="first" name="Year" type="number " placeholder="Year" required="required">
+            <input id="second" name="Present_Price" placeholder="Current Showroom Price in Lakhs" required="required">
+            <input id="third" name="Kms_Driven" placeholder="Car has been driven in Kms" required="required">
+
+            <h2>Fuel Type</h2><select name="Fuel_Type" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+            <h2>Seller Type</h2><select name="Seller_Type" id="Seller_Type" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <h2>Transmission Type</h2><select name="Transmission_mode" id="research" required="required">
+                <option value="Manual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <br><br><button class="btn" type="Submit ">Predict</button>
+            <br>
+        </form>
+
+        {{ prediction_text }}
+    </div>
+
+</body>
+
+</html>

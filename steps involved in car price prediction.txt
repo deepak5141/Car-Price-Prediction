@@ -1,0 +1,3 @@
+step1. create a new environment.
+step2. go to working directory and launch jupyter notebook
+step3. 
